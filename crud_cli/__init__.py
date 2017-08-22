@@ -58,14 +58,15 @@ class CLI(object):
                                                      dest='command')
         self.subparsers.required = True
 
-    def command(self, name):
+    def command(self, name, *args, **kwargs):
         """Register a function to the command-line interface."""
         def wrapper(f):
             f.parser = self.subparsers.add_parser(
-                    name, description=f.__doc__, parents=[self.common_args])
+                    name, *args, description=f.__doc__,
+                    parents=[self.common_args], **kwargs)
             if getattr(f, 'cli_args', None) is not None:
-                for args, kwargs in f.cli_args:
-                    f.parser.add_argument(*args, **kwargs)
+                for fargs, fkwargs in f.cli_args:
+                    f.parser.add_argument(*fargs, **fkwargs)
             f.parser.set_defaults(action=f)
             return f
         return wrapper

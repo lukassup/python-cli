@@ -10,6 +10,7 @@ from __future__ import (
 )
 
 import argparse
+import json
 import logging
 import sys
 
@@ -38,7 +39,7 @@ class CLI(object):
         '-v',
         '--verbose',
         dest='verbosity',
-        default=[logging.WARNING],
+        default=[logging.INFO],
         action='append_const',
         const=-10,
         help='more verbose',
@@ -113,10 +114,8 @@ cli = CLI()
 @cli.option('-t', '--tag', choices=TAGS)
 def create_command(name, size, tag):
     """Creates a resource."""
-    print('creating resource')
-    print('name: %r' % name)
-    print('size: %r' % size)
-    print('tag: %r' % tag)
+    cli.log.info('creating resource')
+    cli.log.info(json.dumps({'name': name, 'size': size, 'tag': tag}))
 
 
 @cli.command('update')
@@ -125,27 +124,28 @@ def create_command(name, size, tag):
 @cli.option('-t', '--tag', choices=TAGS)
 def update_command(name, size=None, tag=None):
     """Updates a resource."""
-    print('updating resource')
+    cli.log.info('updating resource')
+    cli.log.info(json.dumps({'name': name, 'size': size, 'tag': tag}))
 
 
 @cli.command('delete')
 @cli.option('name')
 def delete_command(name):
     """Delete a resource."""
-    print('deleting resource %s' % name)
+    cli.log.info('deleting resource %s' % name)
 
 
 @cli.command('list')
 def list_command():
     """Lists resources."""
-    print('listing all resources')
+    cli.log.info('listing all resources')
 
 
 @cli.command('find')
 @cli.option('query')
 def find_command(query):
     """Finds resources by query."""
-    print('listing resources matching query %r' % query)
+    cli.log.info('listing resources matching query %r' % query)
 
 
 if __name__ == '__main__':

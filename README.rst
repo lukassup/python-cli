@@ -61,14 +61,19 @@ curtains
 
 .. code-block::
 
-    $ crud-cli --help
-    usage: crud-cli [-h] {create} ...
+    $ crud-cli create --help
+    usage: crud-cli create [-h] [-v | -q] [-s {0,1,2}] name
+
+    Creates a resource.
 
     positional arguments:
-    {create}    subcommands
+    name
 
     optional arguments:
-    -h, --help  show this help message and exit
+    -h, --help            show this help message and exit
+    -v, --verbose         more verbose
+    -q, --quiet           less verbose
+    -s {0,1,2}, --size {0,1,2}
 
 
 .. _development:

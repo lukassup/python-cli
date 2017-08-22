@@ -33,7 +33,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
-    url='https://github.com/lukassup/crud-cli',
+    url='https://github.com/lukassup/python-cli',
     packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=[
     ],

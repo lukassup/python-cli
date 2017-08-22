@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/lukassup/crud-cli.svg?branch=master
-    :target: https://travis-ci.org/lukassup/crud-cli
+.. image:: https://travis-ci.org/lukassup/python-cli.svg?branch=master
+    :target: https://travis-ci.org/lukassup/python-cli
 
 crud-cli
 ========
@@ -17,8 +17,8 @@ recommended way to install this package is via `pip
 
 .. code-block:: bash
 
-    $ git clone https://github.com/lukassup/crud-cli.git
-    $ pip install ./crud-cli
+    $ git clone https://github.com/lukassup/python-cli.git
+    $ pip install ./python-cli
 
 For instructions on installing python and pip see "The Hitchhiker's Guide to
 Python" `Installation Guides
@@ -28,8 +28,8 @@ Alternatively use ``easy_install``:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/lukassup/crud-cli.git
-    $ easy_install ./crud-cli
+    $ git clone https://github.com/lukassup/python-cli.git
+    $ easy_install ./python-cli
 
 .. _usage:
 
@@ -76,12 +76,12 @@ curtains
 Development
 -----------
 
-Install the ``crud-cli`` package in editable mode using ``pip``:
+Install the ``python-cli`` package in editable mode using ``pip``:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/lukassup/crud-cli.git
-    $ pip install -e ./crud-cli
+    $ git clone https://github.com/lukassup/python-cli.git
+    $ pip install -e ./python-cli
 
 .. _testing:
 
@@ -92,7 +92,7 @@ Run the tests:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/lukassup/crud-cli.git
-    $ cd route-cli
+    $ git clone https://github.com/lukassup/python-cli.git
+    $ cd python-cli
     $ python2 setup.py test
     $ python3 setup.py test
